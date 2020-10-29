@@ -3,7 +3,7 @@ e-cervelet is a pipeline that allows you to make first-order and second-order an
 
 
 <div align="center">
-  <img src=https://github.com/MaximeDdnn/e-cervelet/blob/main/e-cervelet_logo.png height="500" width="500">
+  <img src=https://github.com/MaximeDdnn/e-cervelet/blob/main/e-cervelet_logo.png height="300" width="300">
 </div>
 
 
