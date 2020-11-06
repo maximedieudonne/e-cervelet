@@ -97,6 +97,26 @@ switch what
         
     case 'MODEL:specify'
         runs = varargin{4};
+        % creation explicit mask
+        for idx_run = runs
+            path_bold = ['sub-', num2str(subject),'_ses-', session,'_task-a_run-', num2str(idx_run), '_bold.nii.gz'];
+            
+            img = spm_vol(fullfile(paths.path_dataset, paths.path_subject,paths.path_session, path_bold, 'wdsbold_00001.nii'));
+            
+            fprintf('... run ... %s \n', num2str(idx_run))
+            disp(img.dim)
+            
+            exp_mask_init = spm_vol(fullfile(paths.path_dataset, paths.path_subject,paths.path_session, path_bold, 'wdsbold_00001.nii'));
+            exp_mask_data = spm_read_vols(exp_mask_init);
+            disp(size(exp_mask_data))
+            exp_mask_newdata = ones(size(exp_mask_data));
+            exp_mask = spm_create_vol(exp_mask_init);
+            exp_mask.fname = fullfile(paths.path_dataset, paths.path_subject, paths.path_session, path_bold, 'explicit_mask.nii');
+            explicit_mask= spm_write_vol(exp_mask, exp_mask_newdata);
+            
+        end
+        
+        runs = varargin{4};
         
         matlabbatch{1}.spm.stats.fmri_spec.dir = {paths.specify_model_dir};
         matlabbatch{1}.spm.stats.fmri_spec.timing.units = 'secs';
@@ -107,25 +127,25 @@ switch what
         for idx_run = runs
             matlabbatch{1}.spm.stats.fmri_spec.sess(idx_run).scans = {};
             path_bold = ['sub-', num2str(subject),'_ses-', session,'_task-a_run-', num2str(idx_run), '_bold.nii.gz'];
-            nb_vol = size(spm_vol(fullfile(paths.path_dataset, paths.path_subject,paths.path_session, path_bold, 'bold.nii')),1);
+            nb_vol = size(spm_vol(fullfile(paths.path_dataset, paths.path_subject,paths.path_session, path_bold, 'sbold.nii')),1);
             for idx_img = 1:nb_vol
                 path_bold = ['sub-', subject, '_ses-', session, '_task-a_run-', num2str(idx_run), '_bold.nii.gz'];
-                matlabbatch{1}.spm.stats.fmri_spec.sess(idx_run).scans {end + 1,1} = fullfile(path_dataset, path_subject, path_session, path_bold, ['wdsbold_', sprintf('%05d', idx_img), '.nii']);
+                matlabbatch{1}.spm.stats.fmri_spec.sess(idx_run).scans {end + 1,1} = fullfile(paths.path_dataset, paths.path_subject, paths.path_session, path_bold, ['wdsbold_', sprintf('%05d', idx_img), '.nii']);
             end
             matlabbatch{1}.spm.stats.fmri_spec.sess(idx_run).cond = struct('name', {}, 'onset', {}, 'duration', {}, 'tmod', {}, 'pmod', {}, 'orth', {});
-            matlabbatch{1}.spm.stats.fmri_spec.sess(idx_run).multi = {fullfile(path_workdir, path_subject, path_session, path_events, ['multiConditions_run-', num2str(idx_run), '.mat'])};
+            matlabbatch{1}.spm.stats.fmri_spec.sess(idx_run).multi = {fullfile(paths.path_workdir, paths.path_subject, paths.path_session, paths.path_events, ['multiConditions_run-', num2str(idx_run), '.mat'])};
             matlabbatch{1}.spm.stats.fmri_spec.sess(idx_run).regress = struct('name', {}, 'val', {});
             matlabbatch{1}.spm.stats.fmri_spec.sess(idx_run).multi_reg = {''};
             matlabbatch{1}.spm.stats.fmri_spec.sess(idx_run).hpf = 128;
             
         end
-        
+
         matlabbatch{1}.spm.stats.fmri_spec.fact = struct('name', {}, 'levels', {});
         matlabbatch{1}.spm.stats.fmri_spec.bases.hrf.derivs = [0 0];
         matlabbatch{1}.spm.stats.fmri_spec.volt = 1;
         matlabbatch{1}.spm.stats.fmri_spec.global = 'None';
         matlabbatch{1}.spm.stats.fmri_spec.mthresh = 0;
-        matlabbatch{1}.spm.stats.fmri_spec.mask = {''};
+        matlabbatch{1}.spm.stats.fmri_spec.mask = {fullfile(paths.path_dataset, paths.path_subject, paths.path_session, paths.path_session, path_bold, 'explicit_mask.nii')};
         matlabbatch{1}.spm.stats.fmri_spec.cvi = 'AR(1)';
 
         spm_jobman('initcfg');
@@ -144,14 +164,16 @@ switch what
         
 
     case 'CONTRAST:manager'
-        contrast = varargin{4};
+        tasks = varargin{4};
+        contrast = varargin{5};
+        nb_run=8;
         for i=1:length(contrast)
             cont = zeros(1, length(tasks)*nb_run);
             
             for cond = 1:length(contrast{1,i}{1,3})
                 cont(contrast{1,i}{1,2}(cond):length(tasks):length(tasks)*nb_run ) = contrast{1,i}{1,4}(cond);
             end
-            matlabbatch_cm{i}.spm.stats.con.spmmat = {SPM_path};
+            matlabbatch_cm{i}.spm.stats.con.spmmat = {paths.SPM_path};
             matlabbatch_cm{i}.spm.stats.con.consess{1}.tcon.name = [contrast{1,i}{1,1}];
             matlabbatch_cm{i}.spm.stats.con.consess{1}.tcon.weights = cont;
             matlabbatch_cm{i}.spm.stats.con.consess{1}.tcon.sessrep = 'none';
@@ -193,17 +215,17 @@ switch what
         %   contrast    : { {'name_contrast', [index_in_list_of_condition], {name_conditions}, [weight]} }
         %   display     : boolean
         
-        idx_contrast = varargin{2};
-        contrast = varargin{3};
-        display = varargin{4};
+        idx_contrast = varargin{3};
+        contrast = varargin{4};
+        display = varargin{5};
         ii=1;
         for i = idx_contrast
             %task = cell2mat(tasks(i));
             task = contrast{1,ii}{1,1};
             spmT_idx = sprintf('%04d',i);
-            spmT = fullfile(path_workdir, path_subject, path_session, path_result, ['spmT_', spmT_idx,'.nii']);
+            spmT = fullfile(paths.path_workdir, paths.path_subject, paths.path_session, paths.path_result, ['spmT_', spmT_idx,'.nii']);
             Data=suit_map2surf(spmT);
-            name = fullfile(path_workdir, path_subject, path_session, path_report,[task '-vs-Rest.mat']);
+            name = fullfile(paths.path_workdir, paths.path_subject, paths.path_session, paths.path_report,[task '-vs-Rest.mat']);
             save(name,'Data')
             if display
                 fig = spm_figure('GetWin','Graphics');

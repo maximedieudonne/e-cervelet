@@ -3,7 +3,7 @@
 list_tasks = load('list_tasks.mat');
 tasks_A=list_tasks.tasks_A;
 tasks_B=list_tasks.tasks_B;
-tasks_C=list_tasks.tasks_C;
+taskss_C=list_tasks.tasks_C;
 
 list_contrasts= load('list_contrasts.mat');
 contrast_A = list_contrasts.contrast_A;
@@ -54,13 +54,13 @@ for subjectt = subjects
 %             first_level_analysis('PREPROCESS:reslice_suit', paths,subject, sess, run)
 %             disp(run)
 %         end
-        first_level_analysis('MODEL:specify', paths,subject,sess, runs)
+  %      first_level_analysis('MODEL:specify', paths,subject,sess, runs)
         %first_level_analysis('MODEL:estimate', paths,subject, sess)
-        %contrasts = contrast_full;
-        %first_level_analysis('CONTRAST:manager', paths, subject, contrasts )
-        %idx_contrast = [1,2,3,4,5,6,7,8,9,10,11];
-        %display_ = false;
-        %first_level_analysis('FLATMAP:save', subjects, idx_contrast, contrasts, display_)
+        contrasts = contrast_full;
+        %first_level_analysis('CONTRAST:manager', paths, subject,sess,tasks_A, contrasts )
+        idx_contrast = [1,2,3,4,5,6,7,8,9,10,11];
+        display_ = true;
+        first_level_analysis('FLATMAP:save', paths, subjects, idx_contrast, contrasts, display_)
         
     end
 end
