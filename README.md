@@ -24,11 +24,21 @@ spm12 \
 Suit \
 
 # how to install SPM
-official website of spm12 : https://www.fil.ion.ucl.ac.uk/spm/software/spm12/
+official website of spm12 : https://www.fil.ion.ucl.ac.uk/spm/software/spm12/ \
+On the oficial website, go to the sub-window "download", here is the info i specify for this project: \
+SPM vesion : 
+Select SPM version required: spm12
+Additional info : (optional)
+Which imaging modality will you mainly examine with SPM? : fmri
+Which operating system will you run SPM onto? : Linux
+Which MATLAB version will you be using? : r2020a
+Additional Comments : i add no additional comments
 
-
+Once SPM is downloaded, i have to add the path of spm on Matlab. \
+For that, open Matlab >> window 'HOME' >> subwindow 'environement' >> 'set Path' \
+then, select the right path that points your SPM folder.
 
 # how to install Suit
 
-
+official website of suit : http://www.diedrichsenlab.org/imaging/suit.htm
 
