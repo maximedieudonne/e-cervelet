@@ -6,6 +6,9 @@ e-cervelet is a pipeline that allows you to make first-order and second-order an
   <img src=https://github.com/MaximeDdnn/e-cervelet/blob/main/logo_ecervelet.png height="350" width="300">
 </div>
 
+# dependencies
+Matlab
+Suit
 
 # how to install suit
 
