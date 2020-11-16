@@ -40,5 +40,11 @@ then, select the right path that points your SPM folder.
 
 # how to install Suit
 
-official website of suit : http://www.diedrichsenlab.org/imaging/suit.htm
+official website of suit : http://www.diedrichsenlab.org/imaging/suit.htm \
+go to the download page :http://www.diedrichsenlab.org/imaging/suit_download.htm \
+
+you need to register, once the registration is done, download the zip file. \
+
+
+
 
