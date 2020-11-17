@@ -59,10 +59,12 @@ Read the read me of suit for more details. \
 
 ## Descriptions of the codes : 
 
-first_analysis.m : function with all the process you may run for your  \
-second_analysis.m : \
-main_first_analysis.m: \
-main_second_analysis.m: \
+first_analysis.m : function with all the processes you could run for your first order analysis \
+second_analysis.m : function with all the processes you could run for your second order analysis \
+This two function are orgonised with a swhitch case stylte, each corresponding to a a stage of the pipeline. \
+
+main_first_analysis.m: file where you loop your processes throught the subjects and where you define the stage you need \
+main_second_analysis.m: same as previous but for second order analysis \
 
 
 
