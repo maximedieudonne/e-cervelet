@@ -66,6 +66,13 @@ This two function are orgonised with a swhitch case stylte, each corresponding t
 main_first_analysis.m: file where you loop your processes throught the subjects and where you define the stage you need \
 main_second_analysis.m: same as previous but for second order analysis \
 
+# Dentate nuclei
+## mask extraction
+
+<div align="center">
+  <img src=https://github.com/MaximeDdnn/e-cervelet/blob/main/setting_dentate_roi.png height="350" width="300">
+</div>
+
 
 
 
