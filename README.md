@@ -70,7 +70,7 @@ main_second_analysis.m: same as previous but for second order analysis \
 ## mask extraction
 
 <div align="center">
-  <img src=https://github.com/MaximeDdnn/e-cervelet/blob/main/setting_dentate_roi.png height="350" width="300">
+  <img src=https://github.com/MaximeDdnn/e-cervelet/blob/main/setting_dentate_roi.png height="700" width="700">
 </div>
 
 
