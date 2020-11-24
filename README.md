@@ -67,12 +67,21 @@ main_first_analysis.m: file where you loop your processes throught the subjects 
 main_second_analysis.m: same as previous but for second order analysis \
 
 # Dentate nuclei
+
+## Illustration of the pipeline 
+
+## Getting the mean Bold image
+
+The mean bold image is calculate thanks to the function get_meanBold.m
+
 ## mask extraction
+
+The mask of the dentate nuclei is extracted from the mean bold image thanks to tools of MRIcron.
+The tools used is the 3D brush. I localise the dentate nuclei manualy according to its hypointensity on the axial view. I place the centerof the brush on the center of the dentate nuclei. I set the parameters manually according to how the mask change.
 
 <div align="center">
   <img src=https://github.com/MaximeDdnn/e-cervelet/blob/main/setting_dentate_roi.png height="700" width="700">
 </div>
-
 
 
 
