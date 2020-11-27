@@ -5,10 +5,13 @@ e-cervelet is a pipeline that allows you to make first-order and second-order an
   <img src= https://github.com/MaximeDdnn/e-cervelet/blob/main/e-cervelet.png height="300" width="300">
 </div>
 
+<div style="text-align: right">
+
 # Introduction 
 ## Scientific context for the developement of this code : 
 This code was written at the Institut des Neurosciences de la Timone (INT Marseille France) for a team of researchers interested in the analysis of fmri scans of the cerebellar. The aims of this codes is to propose a fully automatic first level analysis and second level analysis for dataset specific to the cerebellar activities. For that, the code use the functions of the Suit toolbox, a toolbox developed by the diedrichsen lab for the analysis of the cerebellar. 
 
+</div>
 
 ## the database used : Multi Domain Task Battery
 database : https://openneuro.org/datasets/ds002105/versions/1.1.0
@@ -23,7 +26,8 @@ runs : 8 runs per sessions.
   <img src= https://github.com/MaximeDdnn/e-cervelet/blob/main/session_organisation.png
 </div>
 
-oo
+
+<div style="text-align: right">
 
 # Run the code
 ## Work environement 
@@ -64,7 +68,7 @@ go to the download page :http://www.diedrichsenlab.org/imaging/suit_download.htm
 you need to register, once the registration is done, download the zip file. \
 Once it's done, unszip the file and place the uncompressed files in your matlab/toolbox/suit/toobox/path. \
 Read the read me of suit for more details. \
-
+</div>
 ## Illustration of the pipeline
 
 <div align="center">
