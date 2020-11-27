@@ -1,0 +1,46 @@
+#!/bin/bash 
+
+set -e
+
+#bl login --ttl 7
+
+project=5fb3e1687e8ecbb378ab0d5e
+
+#subjs='31 30 29 28 27 26 25 24 22 21 20 19 18 17 15 14 12 10 09 08 06 04 03'
+subjs='02'
+session='a1'
+runs='1 2 3 4 5 6 7 8'
+
+for subj in $subjs;
+do
+	for run in $runs
+	do
+		tag="run-$run"
+		echo $tag
+		desc="fmriprep_output"
+		echo $desc
+		if [ ! -f json/$subj-$run.json ]; then
+    			bl dataset query -p $project -b $subj -q $desc --tag $tag --json > json/$subj-$run.json
+		fi
+		for sess in $session
+		do
+			echo "downloading subject : $subj --- session : $sess --- des : $desc"
+			mkdir -p sub-$subj/$sess/run-$run	
+			ids=$(jq -r '.[] | select(.meta.session == '\"$sess\"') | ._id' json/$subj-$run.json)
+			for id in $ids
+			do	
+				echo $id 
+				outdir=sub-$subj/$sess/run-$run
+				bl dataset download $id --directory $outdir
+			done
+			find $outdir -type f -name "*.nii.gz" > listfilesnii.txt
+			cat listfilesnii.txt | while read LINE
+			do
+				echo 'unzip...' ${LINE}
+				gunzip  -k ${LINE}
+			done
+			rm listfilesnii.txt
+		done
+
+	done
+done 
