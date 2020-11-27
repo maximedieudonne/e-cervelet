@@ -22,10 +22,8 @@ runs : 8 runs per sessions.
 <div align="center">
   <img src= https://github.com/MaximeDdnn/e-cervelet/blob/main/session_organisation.png
 </div>
-
-
+  
 # Run the code
-
 ## Work environement 
 this project was developped on a personal laptop Dell Latitude 3500. \
 OS : Ubuntu 18.04.5 LTS 64 bits \
