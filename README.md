@@ -11,7 +11,17 @@ This code was written at the Institut des Neurosciences de la Timone (INT Marsei
 
 
 ## the database used : Multi Domain Task Battery
-https://openneuro.org/datasets/ds002105/versions/1.1.0
+database : https://openneuro.org/datasets/ds002105/versions/1.1.0
+paper relative to the database : DOI 10.1038/s41593-019-0436-x
+
+The database used for test the pipeline is a multi domain task battery. 
+number of subjects 24 : {31,30,29,28,27,26,25,24,22,21,20,19,17,14,12,10,09,08,06,04,03,02}
+sessions : 4 sessions ,{a1,a2,b1,b1}
+runs : 8 runs per sessions.
+
+<div align="center">
+  <img src= https://github.com/MaximeDdnn/e-cervelet/blob/main/e-cervelet.png height="300" width="300">
+</div>
 
 
 # Run the code
