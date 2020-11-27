@@ -70,6 +70,21 @@ This two function are orgonised with a swhitch case stylte, each corresponding t
 main_first_analysis.m: file where you loop your processes throught the subjects and where you define the stage you need \
 main_second_analysis.m: same as previous but for second order analysis \
 
+# result Second Level Analysis ( 18 subjects )
+
+
+<div align="center">
+  <img src=https://github.com/MaximeDdnn/e-cervelet/blob/main/report_second_level/screen-lvl2_01.png
+</div>
+
+<div align="center">
+  <img src=https://github.com/MaximeDdnn/e-cervelet/blob/main/report_second_level/screen-lvl2_02.png
+</div>
+
+<div align="center">
+  <img src=https://github.com/MaximeDdnn/e-cervelet/blob/main/report_second_level/screen-lvl2_03.png
+</div>
+
 # Dentate nuclei
 
 ## Illustration of the pipeline 
