@@ -57,6 +57,8 @@ Read the read me of suit for more details. \
 
 ## Illustration of the pipeline
 
+https://github.com/MaximeDdnn/e-cervelet/blob/main/flow-chart.png
+
 ## Descriptions of the codes : 
 
 first_analysis.m : function with all the processes you could run for your first order analysis \
@@ -69,6 +71,10 @@ main_second_analysis.m: same as previous but for second order analysis \
 # Dentate nuclei
 
 ## Illustration of the pipeline 
+
+<div align="center">
+  <img src=https://github.com/MaximeDdnn/e-cervelet/blob/main/flow-chart.png>
+</div>
 
 ## Getting the mean Bold image
 
