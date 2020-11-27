@@ -2,7 +2,7 @@
 e-cervelet is a pipeline that allows you to make first-order and second-order analysis on the cerebellum thanks the SUIT functions. All the code use a specific database available here : https://openneuro.org/datasets/ds002105/versions/1.1.0
 
 <div align="center">
-  <img src=https://github.com/MaximeDdnn/e-cervelet/blob/main/e-cervelet.png height="300" width="300">
+  <img src= height="300" width="300">
 </div>
 
 # Introduction 
