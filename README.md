@@ -104,6 +104,13 @@ The tools used is the 3D brush. I localise the dentate nuclei manualy according 
   <img src=https://github.com/MaximeDdnn/e-cervelet/blob/main/setting_dentate_roi.png height="700" width="700">
 </div>
 
+Test with one subject
+
+<div align="center">
+  <img src=https://github.com/MaximeDdnn/e-cervelet/blob/main/test_dentate_roi.png
+</div>t : 
+
+
 
 
 
