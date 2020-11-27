@@ -63,11 +63,14 @@ Read the read me of suit for more details. \
 
 ## Descriptions of the codes : 
 
-first_analysis.m : function with all the processes you could run for your first order analysis \
-second_analysis.m : function with all the processes you could run for your second order analysis \
-This two function are orgonised with a swhitch case stylte, each corresponding to a a stage of the pipeline. \
+pipeline_v3 : pipeline of the first level analysis \
 
-main_first_analysis.m: file where you loop your processes throught the subjects and where you define the stage you need \
+older version : 
+(obsolete) first_analysis.m : function with all the processes you could run for your first order analysis \
+(obsolete) main_first_analysis.m: file where you loop your processes throught the subjects and where you define the stage you need \
+
+second_analysis.m : function with all the processes you could run for your second order analysis \
+This  function is orgonised with a swhitch case style, each corresponding to a a stage of the pipeline. \
 main_second_analysis.m: same as previous but for second order analysis \
 
 # result Second Level Analysis ( 18 subjects )
@@ -86,9 +89,6 @@ main_second_analysis.m: same as previous but for second order analysis \
 </div>
 
 # Dentate nuclei
-
-## Illustration of the pipeline 
-
 
 
 ## Getting the mean Bold image
