@@ -57,7 +57,9 @@ Read the read me of suit for more details. \
 
 ## Illustration of the pipeline
 
-https://github.com/MaximeDdnn/e-cervelet/blob/main/flow-chart.png
+<div align="center">
+  <img src=https://github.com/MaximeDdnn/e-cervelet/blob/main/flow-chart.png>
+</div>
 
 ## Descriptions of the codes : 
 
@@ -72,9 +74,7 @@ main_second_analysis.m: same as previous but for second order analysis \
 
 ## Illustration of the pipeline 
 
-<div align="center">
-  <img src=https://github.com/MaximeDdnn/e-cervelet/blob/main/flow-chart.png>
-</div>
+
 
 ## Getting the mean Bold image
 
