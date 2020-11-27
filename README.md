@@ -20,7 +20,7 @@ sessions : 4 sessions ,{a1,a2,b1,b1}
 runs : 8 runs per sessions.
 
 <div align="center">
-  <img src= https://github.com/MaximeDdnn/e-cervelet/blob/main/e-cervelet.png height="300" width="300">
+  <img src= https://github.com/MaximeDdnn/e-cervelet/blob/main/session_organisation.png
 </div>
 
 
