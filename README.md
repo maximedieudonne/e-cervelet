@@ -70,6 +70,9 @@ Read the read me of suit for more details. \
 
 ## Illustration of the pipeline
 
+
+here is the pipeline of all the functions available in the repo e-cervelet. Note that the retangles represent an action/function and the others reprensent the inputs/outputs.
+
 <div align="center">
   <img src=https://github.com/MaximeDdnn/e-cervelet/blob/main/flow-chart.png>
 </div>
